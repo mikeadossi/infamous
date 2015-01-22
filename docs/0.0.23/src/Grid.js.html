@@ -218,84 +218,62 @@ code {
   margin-right: 6px;
   font-size: 0.7em;
 }
-</style><script srr="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/vendor/custom.modernizr.js"></script></head><body><div class="row"><div class="small-12 columns"><h1 class="page-title">infamous<small> src/Molecule.js</small></h1></div></div><div class="row"><div id="nav" class="large-3 columns"><div data-section="accordian" data-options="" class="section-container accordian"><div class="section"><p data-section-title class="title"><a href="../../docs/src/Calendar.js.html"><small>src/</small>Calendar.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Cube.js.html"><small>src/</small>Cube.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/DoubleSidedPlane.js.html"><small>src/</small>DoubleSidedPlane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Grid.js.html"><small>src/</small>Grid.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section active"><p data-section-title class="title"><a href="../../docs/src/Molecule.js.html"><small>src/</small>Molecule.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../docs/src/Molecule.js.html#Molecule">Molecule</a></li><li><a href="../../docs/src/Molecule.js.html#constructor">constructor</a></li><li><a href="../../docs/src/Molecule.js.html#pipe">pipe</a></li><li><a href="../../docs/src/Molecule.js.html#unpipe">unpipe</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Plane.js.html"><small>src/</small>Plane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/PushMenuLayout.js.html"><small>src/</small>PushMenuLayout.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/utils.js.html"><small>src/</small>utils.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../docs/src/utils.js.html#contextWithPerspective">contextWithPerspective</a></li></ul></div></div></div></div><div class="small-12 large-9 columns"><article class="comment"><header></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>LICENSE</p><p>This Source Code Form is subject to the terms of the Mozilla Public<br />License, v. 2.0. If a copy of the MPL was not distributed with this<br />file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">import Modifier from 'famous/core/Modifier';
-import RenderNode from 'famous/core/RenderNode';
-import TransitionableTransform from 'famous/transitions/TransitionableTransform';
-import EventHandler from 'famous/core/EventHandler';
+</style><script srr="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/vendor/custom.modernizr.js"></script></head><body><div class="row"><div class="small-12 columns"><h1 class="page-title">infamous<small> src/Grid.js</small></h1></div></div><div class="row"><div id="nav" class="large-3 columns"><div data-section="accordian" data-options="" class="section-container accordian"><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Calendar.js.html"><small>src/</small>Calendar.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Cube.js.html"><small>src/</small>Cube.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/DoubleSidedPlane.js.html"><small>src/</small>DoubleSidedPlane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section active"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Grid.js.html"><small>src/</small>Grid.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Molecule.js.html"><small>src/</small>Molecule.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.23/src/Molecule.js.html#Molecule">Molecule</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#constructor">constructor</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#pipe">pipe</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#unpipe">unpipe</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Plane.js.html"><small>src/</small>Plane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/PushMenuLayout.js.html"><small>src/</small>PushMenuLayout.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/utils.js.html"><small>src/</small>utils.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.23/src/utils.js.html#contextWithPerspective">contextWithPerspective</a></li></ul></div></div></div></div><div class="small-12 large-9 columns"><article class="comment"><header></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>LICENSE</p><p>This Source Code Form is subject to the terms of the Mozilla Public<br />License, v. 2.0. If a copy of the MPL was not distributed with this<br />file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">import Modifier from 'famous/core/Modifier';
+import Transform from 'famous/core/Transform';
 
-import &quot;army-knife/polyfill.Function.name&quot;;</code></pre></div></div></div></article><article class="comment"><header><h1 id="Molecule">Molecule</h1><h5 class="subheader"><div class="label radius ctx-type">constructor</div>new Molecule()</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@class: </span><span class="string">Molecule</span></li><li class="tag"><span class="type">@constructor: </span><span class="string"></span></li><li class="tag"><span class="type">@extends: </span><span class="otherClass">{famous/core/RenderNode}</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>The Molecule is the basic building block of all components. It extends<br />RenderNode, so it can be added to any RenderNode in a vanilla famo.us render<br />tree. Likewise, you can added any vanilla famo.us object to a Molecule.<br />Other classes that extend Molecule may or may not override RenderNode.add in<br />order to, for example, accept an array of RenderNode-compatible objects,<br />etc.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">export class Molecule extends RenderNode {</code></pre></div></div></div></article><article class="comment"><header><h1 id="constructor">constructor</h1><h5 class="subheader"><div class="label radius ctx-type">constructor</div>constructor()</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@method: </span><span class="string"></span></li><li class="tag"><span class="type">@param: </span><span class="name">initialOptions</span><span class="description">&lt;p&gt;The options to initialize the Molecule with.&lt;/p&gt;</span><span class="types">{Object}</span><span class="typesDescription">&lt;code&gt;Object&lt;/code&gt;</span><span class="optional">false</span><span class="nullable">false</span><span class="nonNullable">false</span><span class="variable">false</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Creates a new Molecule and applies relevant options to it&#39;s contained famous/core/Molecule.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">constructor(initialOptions) {
-    initialOptions = typeof initialOptions != &quot;undefined&quot;? initialOptions: {};
+import Molecule from './Molecule';
 
-    // &quot;private&quot; stuff. Not really, but regard it like so. E.g. obj._.someVariable means you're accessing internal stuff.
-    // TODO: make all properties of this._ non-writeable?
-    this._ = {
-        options: {}, // set and get by this.options
-        handler: new EventHandler(),
-        defaultOptions: {
+import forLength from 'army-knife/forLength';
+
+export class Grid extends Molecule { // a scenegraph tree that lays things out in a grid. The leaf nodes are Modifiers (the cells of the grid). Put stuff in them.
+    constructor(columns, rows, size) {
+        super({size: size});
+
+        this.columns = columns;
+        this.rows = rows;
+        this.cellNodes = [];
+
+        if (typeof this.options.size === 'undefined') { this.setOptions({size: [undefined, undefined]}); }
+
+        forLength(this.columns*this.rows, this.createGridCell.bind(this));
+    }
+
+    createGridCell(index) {
+        var column = index % this.columns;
+        var row = Math.floor(index / this.columns);
+
+        var cellSize = null;
+        if (typeof this.options.size[0] != 'undefined' &amp;&amp; typeof this.options.size[1] != 'undefined') {
+            cellSize = [];
+            cellSize[0] = this.options.size[0]/this.columns;
+            cellSize[1] = this.options.size[1]/this.rows;
+        }
+
+        var mod = new Modifier({
+            align: [0,0],
+            origin: [0,0],
+            size: cellSize? [cellSize[0], cellSize[1]]: [undefined, undefined],
+            transform: Transform.translate(column*cellSize[0],row*cellSize[1],0)
+        });
+        var mod2 = new Modifier({
+            //transform: Transform.rotateY(Math.PI/10),
             align: [0.5,0.5],
-            origin: [0.5,0.5],
-            transform: new TransitionableTransform()
-        }
-    };
+            origin: [0.5,0.5]
+        });
+        // FIXME: ^^^ Why do I need an extra Modifier to align stuff in the middle of the grid cells?????
+        // TODO: Use Molecule instead of Modifier.
+        this.cellNodes.push(this.add(mod).add(mod2));
+    }
 
-    // set the user's initial options. This automatically creates this.modifier, and add it to this (RenderNode).
-    // NOTE: this.options is a setter and initializer.
-    this.options = initialOptions.constructor.name == &quot;Object&quot;? initialOptions: {}; // make sure we have an object literal.
-}</code></pre></div></div></div></article><article class="comment"><header><h1 id="pipe">pipe</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>pipe()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Forwards events from this Molecule&#39;s EventHandler to the given target.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">pipe() {
-    var args = Array.prototype.splice.call(arguments, 0);
-    return this._.handler.pipe.apply(this._.handler, args);
-}</code></pre></div></div></div></article><article class="comment"><header><h1 id="unpipe">unpipe</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>unpipe()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Stops forwarding events from this Molecule&#39;s EventHandler to the given target.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">unpipe() {
-    var args = Array.prototype.splice.call(arguments, 0);
-    return this._.handler.unpipe.apply(this._.handler, args);
-}
-
-on() {
-    var args = Array.prototype.splice.call(arguments, 0);
-    return this._.handler.on.apply(this._.handler, args);
-}
-
-off() {
-    var args = Array.prototype.splice.call(arguments, 0);
-    return this._.handler.on.apply(this._.handler, args);
-}
-
-set options(newOptions) {
-    this.resetOptions();
-    this.setOptions(newOptions);
-}
-get options() {
-    return this._.options;
-}
-setOptions(newOptions) {
-    newOptions = typeof newOptions != &quot;undefined&quot;? newOptions: {};
-
-    if (newOptions.constructor.name != &quot;Object&quot;) { return; }
-
-    for (var prop in newOptions) {
-        // Subject to change when Famo.us API changes.
-        if (Modifier.prototype[''+prop+'From']) {
-            this.modifier[''+prop+'From'](newOptions[prop]);
-        }
-
-        // TODO: delete the non-writeable transform property before setting it.
-        this._.options[prop] = newOptions[prop];
-        // TODO: set the transform property as a non-writeable property after setting it.
+    setChildren(children) {
+        forLength(this.columns*this.rows, function(index) {
+            //this.cellNodes[index].set(null); // TODO: how do we erase previous children?
+            this.cellNodes[index].add(children[index]);
+        }.bind(this));
+        return this;
     }
 }
-resetOptions() {
-    this.modifier = new Modifier(); // what happened to the old Modifier? Is it the infamous Famo.us memory leak?
-    this.set(this.modifier);
-    this.setOptions(this._.defaultOptions);
-}
-
-set transform(newTransform) {
-    this.setOptions({transform: newTransform});
-}
-get transform() {
-    return this.options.transform;
-}
-}
-export default Molecule;</code></pre></div></div></div></article></div></div><!-- Foundation JS--><script type="text/javascript">document.write('<script src=' +
+export default Grid;</code></pre></div></div></div></article></div></div><!-- Foundation JS--><script type="text/javascript">document.write('<script src=' +
 ('__proto__' in {} ? 'http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min' : 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min') +
 '.js><\/script>')
 </script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation/foundation.reveal.min.js"></script><!-- Prism js--><script>/**

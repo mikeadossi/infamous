@@ -218,40 +218,75 @@ code {
   margin-right: 6px;
   font-size: 0.7em;
 }
-</style><script srr="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/vendor/custom.modernizr.js"></script></head><body><div class="row"><div class="small-12 columns"><h1 class="page-title">infamous<small> src/DoubleSidedPlane.js</small></h1></div></div><div class="row"><div id="nav" class="large-3 columns"><div data-section="accordian" data-options="" class="section-container accordian"><div class="section"><p data-section-title class="title"><a href="../../docs/src/Calendar.js.html"><small>src/</small>Calendar.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Cube.js.html"><small>src/</small>Cube.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section active"><p data-section-title class="title"><a href="../../docs/src/DoubleSidedPlane.js.html"><small>src/</small>DoubleSidedPlane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Grid.js.html"><small>src/</small>Grid.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Molecule.js.html"><small>src/</small>Molecule.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../docs/src/Molecule.js.html#Molecule">Molecule</a></li><li><a href="../../docs/src/Molecule.js.html#constructor">constructor</a></li><li><a href="../../docs/src/Molecule.js.html#pipe">pipe</a></li><li><a href="../../docs/src/Molecule.js.html#unpipe">unpipe</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/Plane.js.html"><small>src/</small>Plane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/PushMenuLayout.js.html"><small>src/</small>PushMenuLayout.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../docs/src/utils.js.html"><small>src/</small>utils.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../docs/src/utils.js.html#contextWithPerspective">contextWithPerspective</a></li></ul></div></div></div></div><div class="small-12 large-9 columns"><article class="comment"><header></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>LICENSE</p><p>This Source Code Form is subject to the terms of the Mozilla Public<br />License, v. 2.0. If a copy of the MPL was not distributed with this<br />file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">import Transform from 'famous/core/Transform';
+</style><script srr="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/vendor/custom.modernizr.js"></script></head><body><div class="row"><div class="small-12 columns"><h1 class="page-title">infamous<small> src/Cube.js</small></h1></div></div><div class="row"><div id="nav" class="large-3 columns"><div data-section="accordian" data-options="" class="section-container accordian"><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Calendar.js.html"><small>src/</small>Calendar.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section active"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Cube.js.html"><small>src/</small>Cube.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/DoubleSidedPlane.js.html"><small>src/</small>DoubleSidedPlane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Grid.js.html"><small>src/</small>Grid.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Molecule.js.html"><small>src/</small>Molecule.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.23/src/Molecule.js.html#Molecule">Molecule</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#constructor">constructor</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#pipe">pipe</a></li><li><a href="../../../docs/0.0.23/src/Molecule.js.html#unpipe">unpipe</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/Plane.js.html"><small>src/</small>Plane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/PushMenuLayout.js.html"><small>src/</small>PushMenuLayout.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.23/src/utils.js.html"><small>src/</small>utils.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.23/src/utils.js.html#contextWithPerspective">contextWithPerspective</a></li></ul></div></div></div></div><div class="small-12 large-9 columns"><article class="comment"><header></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>LICENSE</p><p>This Source Code Form is subject to the terms of the Mozilla Public<br />License, v. 2.0. If a copy of the MPL was not distributed with this<br />file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">import Modifier from 'famous/core/Modifier';
+import Surface from 'famous/core/Surface';
+import Transform from 'famous/core/Transform';
+import MouseSync from 'famous/inputs/MouseSync';
+import TouchSync from 'famous/inputs/TouchSync';
+import GenericSync from 'famous/inputs/GenericSync';
 
 import Molecule from './Molecule';
 import Plane from './Plane';
 
-export class DoubleSidedPlane extends Molecule { // a basic building block.
-    constructor(initialOptions) {
-        super(initialOptions);
+import forLength from 'army-knife/forLength';
 
-        this.children = [];
-        this.plane1 = new Plane(this.options);
-        this.plane1.transform.set(Transform.rotate(0,0,0));
-        this.setOptions({properties: {background: 'orange'}});
-        this.plane2 = new Plane(this.options);
-        this.plane2.transform.set(Transform.rotate(0,Math.PI,0));
+export class Cube extends Molecule { // a scenegraph tree that lays things out in a cube. The leaf nodes are Modifiers (the sides of the cube). Put stuff in them.
+    constructor(cubeWidth) {
+        super({size: cubeWidth});
 
-        this.children.push(this.plane1);
-        this.children.push(this.plane2);
-        this.add(this.plane2)
-        this.add(this.plane1);
-        this.plane1.pipe(this._.handler);
-        this.plane2.pipe(this._.handler);
+        GenericSync.register({
+            mouse: MouseSync,
+            touch: TouchSync
+        });
 
+        this.cubeWidth = cubeWidth;
+
+        this.cubeSideNodes = [];
+        this.cubeSides = [];
+
+        forLength(6, this._createCubeSide.bind(this));
     }
 
-    getContent() {
-        return [this.plane1.getContent(), this.plane2.getContent()];
+    _createCubeSide(index) {
+        var T = Transform;
+        var sideMol = new Molecule();
+        var side = new Plane({
+            size: [this.cubeWidth,this.cubeWidth],
+            properties: {
+                background: 'pink',
+                backfaceVisibility: 'visible'
+            }
+        });
+        var sync = new GenericSync(['mouse','touch']);
+
+        this.cubeSides.push(side);
+
+        side.pipe(sync);
+        sync.pipe(this._.handler);
+
+        // rotate and place each side.
+        if (index &lt; 4) { // sides
+            sideMol.modifier.transformFrom( T.multiply(T.rotate(0, (Math.PI/2)*index, 0), T.translate(0,0,this.cubeWidth/2)));
+        }
+        else { // top/bottom
+            sideMol.modifier.transformFrom( T.multiply(T.rotate( (Math.PI/2)*(index%2?-1:1), 0, 0), T.translate(0,0,this.cubeWidth/2)));
+        }
+
+        this.cubeSideNodes.push(
+            this.add(sideMol)
+        );
+        sideMol.add(side);
     }
-    setContent(content) {
-        this.plane1.setContent(content[0]);
-        this.plane2.setContent(content[1]);
+
+    setChildren(children) {
+        forLength(6, function(index) {
+            //this.cubeSideNodes[index].set(null); // TODO: how do we erase previous children?
+            this.cubeSideNodes[index].add(children[index]);
+        }.bind(this));
+        return this;
     }
 }
-export default DoubleSidedPlane;</code></pre></div></div></div></article></div></div><!-- Foundation JS--><script type="text/javascript">document.write('<script src=' +
+export default Cube;</code></pre></div></div></div></article></div></div><!-- Foundation JS--><script type="text/javascript">document.write('<script src=' +
 ('__proto__' in {} ? 'http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min' : 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min') +
 '.js><\/script>')
 </script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation/foundation.reveal.min.js"></script><!-- Prism js--><script>/**

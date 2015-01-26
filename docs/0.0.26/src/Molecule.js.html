@@ -1,0 +1,326 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width" charset="utf-8"><title>infamous</title><!-- Foundation CSS--><link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/css/foundation.min.css"><!-- Prism CSS--><style type="text/css">/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0,0%,100%,.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style><!-- Custom Styles--><style type="text/css">h1.page-title small {
+  font-weight: 400;
+}
+/*.section-container, .section-container .section .title
+  border-color #e6e6e6*/
+#nav .section.active {
+  padding-top: 0 !important;
+}
+#nav .section.active .title {
+  background: #ddd;
+}
+#nav .section .title {
+  background-color: #eee;
+}
+#nav .section .title a {
+  font-weight: 700;
+  padding: 0.6em;
+}
+#nav .section .title a small {
+  font-size: 0.8em;
+  line-height: 1em;
+  display: block;
+  color: #888;
+  margin: 2px 0 -2px;
+}
+#nav .section .title:hover {
+  background: #ddd;
+}
+#nav ul.solo {
+  border-top: 1px solid #ccc;
+  padding: 0.875em;
+}
+code {
+  background: transparent;
+  line-height: 1.3em;
+  font-weight: normal;
+}
+.comment {
+  position: relative;
+  padding-bottom: 1.5em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+}
+.comment ol,
+.comment ul {
+  margin-left: 2.25em;
+}
+.comment ol.no-bullet,
+.comment ul.no-bullet {
+  margin-left: 0;
+}
+.comment header {
+  margin-bottom: 1.5em;
+}
+.comment header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+.comment .section-container,
+.comment .section-container > .section > .content {
+  border: none;
+}
+.comment .section-container > .section > .title {
+  padding: auto;
+  background: none !important;
+  border: none !important;
+}
+.comment .section-container > .section > .title a {
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 1px 10px 1px 0;
+  margin-right: 5px;
+  color: #ccc;
+}
+.comment .section-container > .section:hover .title a {
+  color: #999;
+}
+.comment .section-container > .section.active .title a {
+  color: #2ba6cb;
+}
+.comment .section-container > .section > .content {
+  padding: 0.9em 0 0;
+}
+.comment div.description h2 {
+  font-size: 1.2em;
+}
+.comment .tags span {
+  margin-right: 4px;
+}
+.comment .tags .name,
+.comment .tags .type {
+  font-weight: 700;
+}
+.comment .tags .types {
+  color: #666;
+}
+.comment .tags .description {
+  margin-left: 15px;
+}
+.ctx-type {
+  margin-right: 6px;
+  font-size: 0.7em;
+}
+</style><script srr="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/vendor/custom.modernizr.js"></script></head><body><div class="row"><div class="small-12 columns"><h1 class="page-title">infamous<small> src/Molecule.js</small></h1></div></div><div class="row"><div id="nav" class="large-3 columns"><div data-section="accordian" data-options="" class="section-container accordian"><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/Calendar.js.html"><small>src/</small>Calendar.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/Cube.js.html"><small>src/</small>Cube.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.26/src/Cube.js.html#Cube">Cube</a></li><li><a href="../../../docs/0.0.26/src/Cube.js.html#constructor">constructor</a></li><li><a href="../../../docs/0.0.26/src/Cube.js.html#setChildren">setChildren</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/DoubleSidedPlane.js.html"><small>src/</small>DoubleSidedPlane.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/Grid.js.html"><small>src/</small>Grid.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section active"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/Molecule.js.html"><small>src/</small>Molecule.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.26/src/Molecule.js.html#Molecule">Molecule</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#constructor">constructor</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#pipe">pipe</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#unpipe">unpipe</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#on">on</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#off">off</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#options">options</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#setOptions">setOptions</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#resetOptions">resetOptions</a></li><li><a href="../../../docs/0.0.26/src/Molecule.js.html#transform">transform</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/Plane.js.html"><small>src/</small>Plane.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.26/src/Plane.js.html#Plane">Plane</a></li><li><a href="../../../docs/0.0.26/src/Plane.js.html#constructor">constructor</a></li><li><a href="../../../docs/0.0.26/src/Plane.js.html#getContent">getContent</a></li><li><a href="../../../docs/0.0.26/src/Plane.js.html#setContent">setContent</a></li></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/PushMenuLayout.js.html"><small>src/</small>PushMenuLayout.js</a></p><div data-section-content class="content"><ul class="side-nav"></ul></div></div><div class="section"><p data-section-title class="title"><a href="../../../docs/0.0.26/src/utils.js.html"><small>src/</small>utils.js</a></p><div data-section-content class="content"><ul class="side-nav"><li><a href="../../../docs/0.0.26/src/utils.js.html#contextWithPerspective">contextWithPerspective</a></li></ul></div></div></div></div><div class="small-12 large-9 columns"><article class="comment"><header></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>LICENSE</p><p>This Source Code Form is subject to the terms of the Mozilla Public<br />License, v. 2.0. If a copy of the MPL was not distributed with this<br />file, You can obtain one at <a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">import Modifier from 'famous/core/Modifier';
+import RenderNode from 'famous/core/RenderNode';
+import TransitionableTransform from 'famous/transitions/TransitionableTransform';
+import EventHandler from 'famous/core/EventHandler';
+
+import &quot;army-knife/polyfill.Function.name&quot;;</code></pre></div></div></div></article><article class="comment"><header><h1 id="Molecule">Molecule</h1><h5 class="subheader"><div class="label radius ctx-type">class</div>new Molecule()</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@class: </span><span class="string">Molecule</span></li><li class="tag"><span class="type">@extends: </span><span class="otherClass">{module: famous/core/RenderNode}</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Molecules are the basic building blocks of all UI components. Molecules<br />extend <a href="#famous/core/RenderNode">famous/core/RenderNode</a>, so they can be<br />added to any RenderNode of a famo.us render tree, and by default they will<br />also accept anything that a normal Famo.us RenderNode can accept via the<br /><code>.add</code> method.  Classes that extend from Molecule might override<br /><code>RenderNode.add</code> in order to accept things like arrays of renderables in<br />stead of a single renderable.</p><p>Molecules encapsulate the basic things you need for a component -- a<br /><a href="#famous/transitions/TransitionableTransform">famous/transitions/TransitionableTransform</a><br />for positioning things in space, and a <a href="#famous/core/EventHandler">famous/core/EventHandler</a><br />for capturing user interaction -- exposing a single API for working with<br />things in unison. For now, famous/core/Modifiers are used as the interface<br />for applying transforms and sizing, but this will change in Mixed Mode<br />Famo.us.</p><p>All components extend Molecule, but at the same time they can also use any<br />number of Molecules internally to do nice things like create layouts and<br />position multiple things in space.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">export class Molecule extends RenderNode {</code></pre></div></div></div></article><article class="comment"><header><h1 id="constructor">constructor</h1><h5 class="subheader"><div class="label radius ctx-type">constructor</div>Molecule.prototype.constructor()</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@constructor: </span><span class="string"></span></li><li class="tag"><span class="type">@param: </span><span class="name">initialOptions</span><span class="description">&lt;p&gt;The options to initialize the Molecule&amp;#39;s Modifier with.&lt;/p&gt;</span><span class="types">{Object}</span><span class="typesDescription">&lt;code&gt;Object&lt;/code&gt;</span><span class="optional">false</span><span class="nullable">false</span><span class="nonNullable">false</span><span class="variable">false</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Creates a new Molecule and applies initialOptions to it&#39;s internal<br />famous/core/Modifier. See <a href="#famous/core/Modifier">famous/core/Modifier</a><br />for details on what options you can pass.</p><p>Note: Mixed Mode Famo.us does away with Modifiers, so this API will<br />change slightly, but the change will be in such a way that APIs of<br />higher level classes won&#39;t change. One of the biggest changes in Mixed<br />Mode will be that <code>size</code> will be set only on a per-Surface basis as far<br />as a render tree is concerned. So if you normally put Surfaces into a<br />Modifier that has a size, then instead you&#39;d have to assign a size to<br />each Surface, not on the Modifier. This is a good thing, and makes for a<br />cleaner and easier to use render tree with a separation of concerns from<br />classes that can handle boundaries and group sizing. Molecule might then<br />be an example of such a class, having it&#39;s own size API.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">constructor(initialOptions) {
+    initialOptions = typeof initialOptions != &quot;undefined&quot;? initialOptions: {};
+
+    // &quot;private&quot; stuff. Not really, but regard it like so. For example, if
+    // you see something like obj._.someVariable means then you're
+    // accessing internal stuff that wasn't designed to be accessed
+    // directly, and any problem you enounter with that is your own
+    // problem. :)
+    //
+    // TODO: make all properties of this._ non-writeable, then create
+    // getters and setters that can change the writable state with private
+    // methods, so that these properties are inaccessible from the outside?
+    this._ = {
+        options: {}, // set and get with this.options
+        handler: new EventHandler(),
+        defaultOptions: {
+            align: [0.5,0.5],
+            origin: [0.5,0.5],
+            transform: new TransitionableTransform()
+        }
+    };
+
+    // set the user's initial options. This automatically creates
+    // this.modifier, and adds it to this (don't forget, *this* is a
+    // RenderNode, so a Molecule can add things to itself).
+    //
+    // NOTE: this.options is a setter property. This statement applies all
+    // relevant properties to this.modifier.
+    this.options = initialOptions.constructor.name == &quot;Object&quot;? initialOptions: {};
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="pipe">pipe</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.pipe()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Forwards events from this Molecule&#39;s<br /><a href="#famous/core/EventHandler">famous/core/EventHandler</a> to the given<br />target, which can be another EventHandler or Molecule for example.</p><p>This method is equivalent to <a href="#famous/core/EventHandler.pipe">famous/core/EventHandler.pipe</a>,<br />acting upon this.handler.</p><p>TODO v0.1.0: Let this method accept a Molecule, then stop doing pipe(this._.handler) in other places</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">pipe() {
+    var args = Array.prototype.splice.call(arguments, 0);
+    return this._.handler.pipe.apply(this._.handler, args);
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="unpipe">unpipe</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.unpipe()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Stops events from this Molecule&#39;s <a href="#famous/core/EventHandler">famous/core/EventHandler</a><br />from being sent to the given target.</p><p>This method is equivalent to <a href="#famous/core/EventHandler.unpipe">famous/core/EventHandler.unpipe</a>,<br />acting upon this.handler.</p><p>TODO v0.1.0: Let this method accept a Molecule, then stop doing unpipe(this._.handler) in other places</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">unpipe() {
+    var args = Array.prototype.splice.call(arguments, 0);
+    return this._.handler.unpipe.apply(this._.handler, args);
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="on">on</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.on()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Add an event handler for a specific event.<br />See <a href="#famous/core/EventHandler.on">famous/core/EventHandler.on</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">on() {
+    var args = Array.prototype.splice.call(arguments, 0);
+    return this._.handler.on.apply(this._.handler, args);
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="off">off</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.off()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Remove an event handler for a specific event.<br />See <a href="#famous/core/EventHandler.off">famous/core/EventHandler.off</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">off() {
+    var args = Array.prototype.splice.call(arguments, 0);
+    return this._.handler.on.apply(this._.handler, args);
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="options">options</h1><h5 class="subheader"><div class="label radius ctx-type">property</div>Molecule.prototype.options</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@property: </span><span class="name">options</span><span class="description">&lt;p&gt;The Molecule&amp;#39;s options, which get applied to this.modifier. This may change with Mixed Mode. Setting this property&lt;br /&gt;overrides existing options. To extend existing options with new options,&lt;br /&gt;use &lt;code&gt;setOptions&lt;/code&gt; instead.  Unspecified options will be set to default&lt;br /&gt;values.&lt;/p&gt;&lt;p&gt;Note: Anytime this.options is assigned a new value, this.modifier is set&lt;br /&gt;to a new &lt;a href=&quot;#famous/core/Molecule&quot;&gt;famous/core/Modifier&lt;/a&gt;.&lt;/p&gt;</span><span class="types">{Object}</span><span class="typesDescription">&lt;code&gt;Object&lt;/code&gt;</span><span class="optional">false</span><span class="nullable">false</span><span class="nonNullable">false</span><span class="variable">false</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">set options(newOptions) {
+    this.resetOptions();
+    this.setOptions(newOptions);
+}
+get options() {
+    return this._.options;
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="setOptions">setOptions</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.setOptions()</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@param: </span><span class="name">newOptions</span><span class="description">&lt;p&gt;An object containing the new options to apply to this Molecule.&lt;/p&gt;</span><span class="types">{Object}</span><span class="typesDescription">&lt;code&gt;Object&lt;/code&gt;</span><span class="optional">false</span><span class="nullable">false</span><span class="nonNullable">false</span><span class="variable">false</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Compounds newOptions into the existing options, similar to extending an<br />object and overriding only the desired properties. To override all<br />options with a set of new options, set this.options directly.</p><p>An example of setting just a single option without erasing other options:</p><pre><code class="lang-js">myMolecule.setOptions({
+  align: [0.2, 0.8]
+})
+</code></pre>
+</div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">setOptions(newOptions) {
+    newOptions = typeof newOptions != &quot;undefined&quot;? newOptions: {};
+
+    if (newOptions.constructor.name != &quot;Object&quot;) { return; }
+
+    for (var prop in newOptions) {
+        // Subject to change when Famo.us API changes.
+        if (Modifier.prototype[''+prop+'From']) {
+            this.modifier[''+prop+'From'](newOptions[prop]);
+        }
+
+        // TODO: delete the non-writeable transform property before setting it.
+        this._.options[prop] = newOptions[prop];
+        // TODO: set the transform property as a non-writeable property after setting it.
+    }
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="resetOptions">resetOptions</h1><h5 class="subheader"><div class="label radius ctx-type">method</div>Molecule.prototype.resetOptions()</h5></header><ul class="no-bullet tags"></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"><p>Sets all options back to their defaults.</p><p>Note: Anytime this is called, this.modifier is set to a new<br /><a href="#famous/core/Modifier">famous/core/Modifier</a>.</p></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">resetOptions() {
+    this.modifier = new Modifier();
+    this.set(this.modifier);
+    this.setOptions(this._.defaultOptions);
+}</code></pre></div></div></div></article><article class="comment"><header><h1 id="transform">transform</h1><h5 class="subheader"><div class="label radius ctx-type">property</div>Molecule.prototype.transform</h5></header><ul class="no-bullet tags"><li class="tag"><span class="type">@property: </span><span class="name">transform</span><span class="description">&lt;p&gt;The transform of this Molecule. The default is a&lt;br /&gt;&lt;a href=&quot;#famous/transitions/TransitionableTransform&quot;&gt;famous/transitions/TransitionableTransform&lt;/a&gt;.&lt;br /&gt;Setting this property automatically puts the new transform into effect.&lt;br /&gt;See &lt;a href=&quot;#famous/core/Modifier.transformFrom&quot;&gt;famous/core/Modifier.transformFrom&lt;/a&gt;.&lt;/p&gt;</span><span class="types">{module:famous/transitions/TransitionableTransform}</span><span class="typesDescription">module:&lt;a href=&quot;module%3Afamous%2Ftransitions%2FTransitionableTransform.html&quot;&gt;famous/transitions/TransitionableTransform&lt;/a&gt;</span><span class="optional">false</span><span class="nullable">false</span><span class="nonNullable">false</span><span class="variable">false</span></li></ul><div data-section="accordian" data-options="one_up: false;" class="section-container code auto"><div class="section"><p data-section-title class="title"><a href="#">Description</a></p><div data-section-content class="content description"></div></div><div class="section"><p data-section-title class="title"><a href="#">Source</a></p><div data-section-content class="content"><pre><code class="language-javascript">set transform(newTransform) {
+    this.setOptions({transform: newTransform});
+}
+get transform() {
+    return this.options.transform;
+}
+
+}
+export default Molecule;</code></pre></div></div></div></article></div></div><!-- Foundation JS--><script type="text/javascript">document.write('<script src=' +
+('__proto__' in {} ? 'http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min' : 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min') +
+'.js><\/script>')
+</script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation/foundation.reveal.min.js"></script><!-- Prism js--><script>/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data),o);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar,l.language);t.hooks.run("before-insert",l);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r,i){return n.stringify(t.tokenize(e,r),i)},tokenize:function(e,n,r){var i=t.Token,s=[e],o=n.rest;if(o){for(var u in o)n[u]=o[u];delete n.rest}e:for(var u in n){if(!n.hasOwnProperty(u)||!n[u])continue;var a=n[u],f=a.inside,l=!!a.lookbehind,c=0;a=a.pattern||a;for(var h=0;h<s.length;h++){var p=s[h];if(s.length>e.length)break e;if(p instanceof i)continue;a.lastIndex=0;var d=a.exec(p);if(d){l&&(c=d[1].length);var v=d.index-1+c,d=d[0].slice(c),m=d.length,g=v+m,y=p.slice(0,v+1),b=p.slice(g+1),w=[h,1];y&&w.push(y);var E=new i(u,f?t.tokenize(d,f):d);w.push(E);b&&w.push(b);Array.prototype.splice.apply(s,w)}}}return s},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e,r,i){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(function(t){return n.stringify(t,r,e)}).join("");var s={type:e.type,content:n.stringify(e.content,r,i),tag:"span",classes:["token",e.type],attributes:{},language:r,parent:i};s.type=="comment"&&(s.attributes.spellcheck="true");t.hooks.run("wrap",s);var o="";for(var u in s.attributes)o+=u+'="'+(s.attributes[u]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+Prism.languages.markup={comment:/&lt;!--[\w\W]*?-->/g,prolog:/&lt;\?.+?\?>/,doctype:/&lt;!DOCTYPE.+?>/,cdata:/&lt;!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?>/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|>|"/g}},punctuation:/\/?>/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*{))/gi,inside:{punctuation:/[;:]/g}},url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\};]*(?=\s*\{)/g,property:/(\b|\B)[\w-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|(^|[^:])\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,"class-name":{pattern:/((?:(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/ig,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,"function":{pattern:/[a-z0-9_]+\(/ig,inside:{punctuation:/\(/}}, number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?)\b/g,operator:/[-+]{1,2}|!|&lt;=?|>=?|={1,3}|(&amp;){1,2}|\|?\||\?|\*|\/|\~|\^|\%/g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b-?(0x[\dA-Fa-f]+|\d*\.?\d+([Ee]-?\d+)?|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+Prism.languages.coffeescript=Prism.languages.extend("javascript",{"block-comment":/([#]{3}\s*\r?\n(.*\s*\r*\n*)\s*?\r?\n[#]{3})/g,comment:/(\s|^)([#]{1}[^#^\r^\n]{2,}?(\r?\n|$))/g,keyword:/\b(this|window|delete|class|extends|namespace|extend|ar|let|if|else|while|do|for|each|of|return|in|instanceof|new|with|typeof|try|catch|finally|null|undefined|break|continue)\b/g});Prism.languages.insertBefore("coffeescript","keyword",{"function":{pattern:/[a-z|A-z]+\s*[:|=]\s*(\([.|a-z\s|,|:|{|}|\"|\'|=]*\))?\s*-&gt;/gi,inside:{"function-name":/[_?a-z-|A-Z-]+(\s*[:|=])| @[_?$?a-z-|A-Z-]+(\s*)| /g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g}},"attr-name":/[_?a-z-|A-Z-]+(\s*:)| @[_?$?a-z-|A-Z-]+(\s*)| /g});;
+Prism.languages.scss=Prism.languages.extend("css",{comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},atrule:/@[\w-]+(?=\s+(\(|\{|;))/gi,url:/([-a-z]+-)*url(?=\()/gi,selector:/([^@;\{\}\(\)]?([^@;\{\}\(\)]|&amp;|\#\{\$[-_\w]+\})+)(?=\s*\{(\}|\s|[^\}]+(:|\{)[^\}]+))/gm});Prism.languages.insertBefore("scss","atrule",{keyword:/@(if|else if|else|for|each|while|import|extend|debug|warn|mixin|include|function|return)|(?=@for\s+\$[-_\w]+\s)+from/i});Prism.languages.insertBefore("scss","property",{variable:/((\$[-_\w]+)|(#\{\$[-_\w]+\}))/i});Prism.languages.insertBefore("scss","ignore",{placeholder:/%[-_\w]+/i,statement:/\B!(default|optional)\b/gi,"boolean":/\b(true|false)\b/g,"null":/\b(null)\b/g,operator:/\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g});
+;
+</script><script>  var headerHeight = 64;
+
+  $(document).foundation();
+
+  $(function(){
+    $('pre code').addClass('language-javascript');
+  //   $('#nav > ul > li > a[href$="'+location.pathname.substring(location.pathname.lastIndexOf('/')+1, location.pathname.length)+'"]').parent().addClass('active');
+  })</script></body></html>

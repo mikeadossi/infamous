@@ -1,3 +1,7 @@
+const DedupePlugin = require('webpack/lib/optimize/DedupePlugin')
+
+console.log(' -------------- DEDUPE?', DedupePlugin)
+
 module.exports = {
     entry: [
         // Using this instead of transform-runtime,
@@ -30,5 +34,8 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new DedupePlugin()
+    ],
     devtool: "source-map",
 }

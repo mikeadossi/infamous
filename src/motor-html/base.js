@@ -118,6 +118,7 @@ export function initMotorHTMLBase() {
      */
     DeclarativeBase = class DeclarativeBase extends WebComponent(window.HTMLElement) {
         createdCallback() {
+            console.log('DeclarativeBase createdCallback', this.tagName)
             super.createdCallback()
 
             this.imperativeCounterpart = null // to hold the imperative API Node instance.
@@ -213,6 +214,7 @@ export function initMotorHTMLBase() {
         }
 
         childConnectedCallback(child) {
+            console.log('DeclarativeBase childConnectedCallback', this.tagName)
 
             // mirror the DOM connections in the imperative API's virtual scene graph.
             if (child instanceof MotorHTMLNode) {
@@ -328,6 +330,7 @@ export function initMotorHTMLBase() {
         }
 
         childDisconnectedCallback(child) {
+            console.log('DeclarativeBase childDisconnectedCallback', this.tagName)
             // mirror the connection in the imperative API's virtual scene graph.
             if (child instanceof MotorHTMLNode) {
                 child._isPossiblyDistributed = false

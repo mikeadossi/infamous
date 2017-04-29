@@ -107,12 +107,16 @@ class Scene extends ImperativeBase.mixin(Sizeable) {
 
         // if we have an actual mount point (the user may have supplied one)
         if (!(mountPoint instanceof window.HTMLElement))
-            throw new Error('Invalid mount point specified in Scene.mount() call. Specify a selector, or pass an actual HTMLElement.')
+            throw new Error('Invalid mount point specified in Scene.mount() call. Pass a selector, an actual HTMLElement, or don\'t pass anything to mount to <body>.')
 
         if (this._mounted) this.unmount()
 
         if (mountPoint !== this._elementManager.element.parentNode)
             mountPoint.appendChild(this._elementManager.element)
+
+        const el = this._elementManager.element
+        const canvas = this._elementManager.element._canvas
+        el.insertAdjacentElement('afterend', canvas)
 
         this._mounted = true
 

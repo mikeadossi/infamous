@@ -24,6 +24,7 @@ class MotorHTMLNode extends MotorHTMLBase {
     }
 
     async attributeChangedCallback(...args) {
+        console.log('MotorHTMLNode createdCallback')
         super.attributeChangedCallback(...args)
         await this._imperativeCounterpartPromise
         this._updateNodeProperty(...args)

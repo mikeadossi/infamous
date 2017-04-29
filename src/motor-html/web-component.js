@@ -87,6 +87,7 @@ function WebComponentMixin(elementClass) {
         }
 
         createdCallback() {
+            console.log('WebComponent createdCallback', this.tagName)
             this._attached = false
             this._initialized = false
             this._initialAttributeChange = false
@@ -99,6 +100,7 @@ function WebComponentMixin(elementClass) {
         childDisconnectedCallback(child) {}
 
         connectedCallback() {
+            console.log('WebComponent connectedCallback', this.tagName)
             if (super.connectedCallback) super.connectedCallback()
             this._attached = true
 
@@ -118,6 +120,7 @@ function WebComponentMixin(elementClass) {
         }
 
         async disconnectedCallback() {
+            console.log('WebComponent disconnectedCallback', this.tagName)
             if (super.disconnectedCallback) super.disconnectedCallback()
             this._attached = false
 
@@ -166,6 +169,7 @@ function WebComponentMixin(elementClass) {
          * Subclasses should extend this to add such logic.
          */
         init() {
+            console.log('WebComponent init', this.tagName)
             if (!this._style) this._style = this._createStyles()
 
             // Handle any nodes that may have been connected before `this` node
@@ -207,6 +211,7 @@ function WebComponentMixin(elementClass) {
         }
 
         attributeChangedCallback() {
+            console.log('WebComponent attributeChangedCallback', this.tagName)
             if (super.attributeChangedCallback) super.attributeChangedCallback()
             this._initialAttributeChange = true
         }

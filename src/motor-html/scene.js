@@ -18,9 +18,12 @@ class MotorHTMLScene extends Observable.mixin(MotorHTMLBase) {
 
     createdCallback() {
         super.createdCallback()
+        console.log('MotorHTMLScene createdCallback')
 
         this._sizePollTask = null
         this._parentSize = {x:0, y:0, z:0}
+        this._canvas = document.createElement('canvas')
+        this._canvas.style.display = 'none'
 
         // After the imperativeCounterpart is available it needs to register
         // mount into DOM. This is only for MotorHTMLScenes because their

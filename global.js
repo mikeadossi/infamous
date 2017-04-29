@@ -20900,6 +20900,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _Utility = __webpack_require__(367);
@@ -21035,7 +21037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	
 	                if (previousSize.x !== calculatedSize.x || previousSize.y !== calculatedSize.y || previousSize.z !== calculatedSize.z) {
-	                    this.triggerEvent('sizechange', Object.assign({}, calculatedSize));
+	                    this.triggerEvent('sizechange', _extends({}, calculatedSize));
 	                }
 	            }
 	        }, {
@@ -22325,6 +22327,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: 'mount',
 	        value: function () {
 	            var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(mountPoint) {
+	                var el, canvas;
 	                return regeneratorRuntime.wrap(function _callee$(_context) {
 	                    while (1) {
 	                        switch (_context.prev = _context.next) {
@@ -22352,13 +22355,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    break;
 	                                }
 	
-	                                throw new Error('Invalid mount point specified in Scene.mount() call. Specify a selector, or pass an actual HTMLElement.');
+	                                throw new Error('Invalid mount point specified in Scene.mount() call. Pass a selector, an actual HTMLElement, or don\'t pass anything to mount to <body>.');
 	
 	                            case 6:
 	
 	                                if (this._mounted) this.unmount();
 	
 	                                if (mountPoint !== this._elementManager.element.parentNode) mountPoint.appendChild(this._elementManager.element);
+	
+	                                el = this._elementManager.element;
+	                                canvas = this._elementManager.element._canvas;
+	
+	                                el.insertAdjacentElement('afterend', canvas);
 	
 	                                this._mounted = true;
 	
@@ -22367,7 +22375,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                this._elementManager.shouldRender();
 	                                this._startOrStopSizePolling();
 	
-	                            case 12:
+	                            case 15:
 	                            case 'end':
 	                                return _context.stop();
 	                        }
@@ -22490,9 +22498,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var _this2 = this;
 	
 	            _get(MotorHTMLScene.prototype.__proto__ || Object.getPrototypeOf(MotorHTMLScene.prototype), 'createdCallback', this).call(this);
+	            console.log('MotorHTMLScene createdCallback');
 	
 	            this._sizePollTask = null;
 	            this._parentSize = { x: 0, y: 0, z: 0 };
+	            this._canvas = document.createElement('canvas');
+	            this._canvas.style.display = 'none';
 	
 	            // After the imperativeCounterpart is available it needs to register
 	            // mount into DOM. This is only for MotorHTMLScenes because their
@@ -22827,6 +22838,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            value: function createdCallback() {
 	                var _this2 = this;
 	
+	                console.log('DeclarativeBase createdCallback', this.tagName);
 	                _get(DeclarativeBase.prototype.__proto__ || Object.getPrototypeOf(DeclarativeBase.prototype), 'createdCallback', this).call(this);
 	
 	                this.imperativeCounterpart = null; // to hold the imperative API Node instance.
@@ -22931,6 +22943,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, {
 	            key: 'childConnectedCallback',
 	            value: function childConnectedCallback(child) {
+	                console.log('DeclarativeBase childConnectedCallback', this.tagName);
 	
 	                // mirror the DOM connections in the imperative API's virtual scene graph.
 	                if (child instanceof _node2.default) {
@@ -23082,6 +23095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, {
 	            key: 'childDisconnectedCallback',
 	            value: function childDisconnectedCallback(child) {
+	                console.log('DeclarativeBase childDisconnectedCallback', this.tagName);
 	                // mirror the connection in the imperative API's virtual scene graph.
 	                if (child instanceof _node2.default) {
 	                    child._isPossiblyDistributed = false;
@@ -23301,6 +23315,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _createClass(WebComponent, [{
 	            key: 'createdCallback',
 	            value: function createdCallback() {
+	                console.log('WebComponent createdCallback', this.tagName);
 	                this._attached = false;
 	                this._initialized = false;
 	                this._initialAttributeChange = false;
@@ -23319,6 +23334,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, {
 	            key: 'connectedCallback',
 	            value: function connectedCallback() {
+	                console.log('WebComponent connectedCallback', this.tagName);
 	                if (_get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'connectedCallback', this)) _get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'connectedCallback', this).call(this);
 	                this._attached = true;
 	
@@ -23350,6 +23366,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        while (1) {
 	                            switch (_context.prev = _context.next) {
 	                                case 0:
+	                                    console.log('WebComponent disconnectedCallback', this.tagName);
 	                                    if (_get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'disconnectedCallback', this)) _get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'disconnectedCallback', this).call(this);
 	                                    this._attached = false;
 	
@@ -23365,10 +23382,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    // (for example, gets moved), then we want to preserve the
 	                                    // stuff that would be cleaned up by an extending class' deinit
 	                                    // method by not running the following this.deinit() call.
-	                                    _context.next = 4;
+	                                    _context.next = 5;
 	                                    return Promise.resolve();
 	
-	                                case 4:
+	                                case 5:
 	                                    // deferr to the next tick.
 	
 	                                    // As mentioned in the previous comment, if the element was not
@@ -23378,7 +23395,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                        this.deinit();
 	                                    }
 	
-	                                case 5:
+	                                case 6:
 	                                case 'end':
 	                                    return _context.stop();
 	                            }
@@ -23427,6 +23444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            value: function init() {
 	                var _this2 = this;
 	
+	                console.log('WebComponent init', this.tagName);
 	                if (!this._style) this._style = this._createStyles();
 	
 	                // Handle any nodes that may have been connected before `this` node
@@ -23512,6 +23530,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }, {
 	            key: 'attributeChangedCallback',
 	            value: function attributeChangedCallback() {
+	                console.log('WebComponent attributeChangedCallback', this.tagName);
 	                if (_get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'attributeChangedCallback', this)) _get(WebComponent.prototype.__proto__ || Object.getPrototypeOf(WebComponent.prototype), 'attributeChangedCallback', this).call(this);
 	                this._initialAttributeChange = true;
 	            }
@@ -23634,14 +23653,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    while (1) {
 	                        switch (_context.prev = _context.next) {
 	                            case 0:
+	                                console.log('MotorHTMLNode createdCallback');
 	                                (_get2 = _get(MotorHTMLNode.prototype.__proto__ || Object.getPrototypeOf(MotorHTMLNode.prototype), 'attributeChangedCallback', this)).call.apply(_get2, [this].concat(args));
-	                                _context.next = 3;
+	                                _context.next = 4;
 	                                return this._imperativeCounterpartPromise;
 	
-	                            case 3:
+	                            case 4:
 	                                this._updateNodeProperty.apply(this, args);
 	
-	                            case 4:
+	                            case 5:
 	                            case 'end':
 	                                return _context.stop();
 	                        }
